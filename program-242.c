@@ -5,9 +5,15 @@ int is_prime(int n) {
     if(n < 2){
         return 0;
     }
+    else if(n == 2){
+        return 1;
+    }
+    else if(n % 2 == 0){
+        return 0;
+    }
     else{
         int i;
-        for(i = 2; i < n; i++) {
+        for(i = 3; i <= n/2; i+=2) {
             if(n % i == 0){
                 return 0;
             }

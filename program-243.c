@@ -1,13 +1,21 @@
 // prime number in  c program....
 #include <stdio.h>
+#include <math.h>
 
 int is_prime(int n) {
     if(n < 2){
         return 0;
     }
+    else if(n == 2){
+        return 1;
+    }
+    else if(n % 2 == 0){
+        return 0;
+    }
     else{
-        int i;
-        for(i = 2; i < n; i++) {
+        int i, root;
+        root = sqrt(n);
+        for(i = 3; i <= root; i+=2) {
             if(n % i == 0){
                 return 0;
             }
@@ -38,3 +46,4 @@ int main() {
 
 return 0;
 }
+
